@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+* {
+	padding : 0px;
+	margin : 0px;
+	box-sizing : border-box;
+}
+
+html, body {
+	width : 100%;
+}
+
+.wrap {
+	margin : 0px auto;
+	width : 100%;
+	max-width : 1280px;
+	padding : 0px 5px;
+}
