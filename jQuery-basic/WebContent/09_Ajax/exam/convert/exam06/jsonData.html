@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../../jquery-2.2.0.js"></script>
+<script>
+	$(function () {
+		$("#sendBtn").click(function () {
+			$.getJSON(
+				"/jQuery-basic/jsonData",
+				function (mList) {
+					var val = "회원 " + mList.length + "명\n";
+					for (var i = 0; i < mList.length; i++) {
+						val += mList[i].id + "-" + 
+						       mList[i].name + "-" + mList[i].pass + "\n";
+					}
+					val += "------------------------------";
+					$("#debug").val(val);
+				}
+			);
+		});
+		
+		$("#clearBtn").click(function () {
+			$("#debug").val("");
+		});	
+	});
+</script>
+</head>
+<body>
+	<h2>서버에서 전송된 데이터 확인</h2>
+	<hr />
+	<textarea rows="10" cols="80" id="debug"></textarea>
+	<br />
+	
+	<button id="clearBtn">초기화</button>
+	<button id="sendBtn">전송</button>
+</body>
+</html>
+
+
+
+
+

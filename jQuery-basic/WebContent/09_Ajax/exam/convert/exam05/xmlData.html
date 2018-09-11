@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../../../jquery-2.2.0.js"></script>
+<script>
+	$(function () {
+		$("#sendBtn").click(function () {
+			$.ajax({
+				url: "/jQuery-basic/xmlData",
+				dataType: "xml"
+			})
+			.done(function (result) {
+				// 응답결과가 xml 형태일 경우
+				var mList = $(result).find("member");
+				var val = "회원 " + mList.length + "명\n";
+				
+	    		$(mList).each(function () {
+	    			var id   = $(this).find("id").text();
+	    			var name = $(this).find("name").text();
+	    			var pass = $(this).find("pass").text();
+	    			val += id + "-" + name + "-" + pass + "\n";
+	    		});
+				val += "------------------------------";
+				$("#debug").val(val);
+			});
+		});
+		
+		$("#clearBtn").click(function () {
+			$("#debug").val("");
+		});	
+	});
+</script>
+</head>
+<body>
+	<h2>서버에서 전송된 데이터 확인</h2>
+	<hr />
+	<textarea rows="10" cols="80" id="debug"></textarea>
+	<br />
+	
+	<button id="clearBtn">초기화</button>
+	<button id="sendBtn">전송</button>
+</body>
+</html>
+
+
+
+
+

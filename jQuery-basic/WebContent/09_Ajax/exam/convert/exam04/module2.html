@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../../../jquery-2.2.0.js"></script>
+<script>
+	$(function () {
+		$("#clearBtn").on("click", function () {
+			$("#debug").val("");
+		});	
+		
+		$("#sendBtn1").click(function () {
+			$.ajax({
+				url: "/jQuery-basic/basic/exam04/module",
+				data: {id   : $("#input1").val(), 
+					   name : $("#input2").val(),
+					   email: $("#input3").val()}
+			})
+			.done(callbackFn)
+			.fail(errorCallbackFn);
+		});
+		
+		
+		$("#sendBtn2").click(function () {
+			$.ajax({
+				url: "/jQuery-basic/basic/exam04/module",
+				type: "POST", 
+				data: {id   : $("#input1").val(), 
+					   name : $("#input2").val(),
+					   email: $("#input3").val()}
+			})
+			.done(callbackFn)
+			.fail(errorCallbackFn);
+		})
+	});
+	
+	// readyState 값이 변경될 때 마다 호출됨..
+	function callbackFn(data) {
+		// 정상적으로 처리됨
+		$("#debug").val( $("#debug").val() + " 정상적으로 처리됨\n" );
+		// 서버의 실행된 결과 꺼내기
+		$("#debug").val( $("#debug").val() + " 결과 : " + data + "\n" );
+	}
+	
+	function errorCallbackFn (jqXHR) {
+		$("#debug").val( $("#debug").val() + " 비정상적으로 처리됨\n" );
+		$("#debug").val( $("#debug").val() + " 오류코드 : " + jqXHR.status + "\n");
+		$("#debug").val( $("#debug").val() + " 오류메세지 : " + jqXHR.statusText+ "\n");
+	}
+</script>
+</head>
+<body>
+	<h2>readyState 상태값 확인</h2>
+	<hr />
+	<textarea rows="10" cols="80" id="debug"></textarea>
+	<br />
+	<p>
+		id : <input type="text" id="input1" size="20" />
+		name : <input type="text" id="input2" size="20" />
+		email : <input type="text" id="input3" size="20" />
+	</p>
+	
+	<button id="clearBtn">초기화</button>
+	<button id="sendBtn1">GET</button>
+	<button id="sendBtn2">POST</button>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

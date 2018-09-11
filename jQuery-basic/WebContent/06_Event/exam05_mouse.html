@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	p {
+		font-size: 20px;
+		font-weight: bold;
+		height: 40px;
+		background: tomato;
+		color: white;
+		text-align: center;
+		line-height: 40px;
+	}
+	div {
+		height: 600px;
+		overflow: auto;
+		background: yellow;
+	}
+</style>
+<script type="text/javascript" src="../jquery-2.2.0.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("p").on({
+			"mouseenter":function(){
+				$("div").prepend("마우스가 들어왔따</br>");
+			},
+			"mouseleave":function(){
+				
+				$("div").prepend("마우스가 나갔따</br>");
+			},
+			"mousedown":function(){
+				
+				$("div").prepend("마우스가 눌렸다</br>");
+			},
+			"mouseup":function(){
+				
+				$("div").prepend("마우스가 눌렸다 띄었다.</br>");
+			},
+			"mousemove":function(){
+				
+				$("div").prepend("마우스가 이동했따.</br>");
+			}
+		});
+	});//endOnload
+</script>
+</head>
+<body>
+    <p>이벤트 <span>연습</span></p>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!-- 
+	$("선택자").load( ... );
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jquery-2.2.0.js"></script>
+<script>
+$(document).ready(function () {
+	$("button").click(function () {
+		/*
+		$("#resultDiv").load("data/test.html");
+		
+	    $.ajax({
+			url: "data/test.html",
+			type: "GET"
+		})
+		.done(function (data) {
+			$("#resultDiv").html(data);
+		});
+	    */
+	    
+	    /*
+	    $("#resultDiv").load(
+	    		"data/param.jsp", {id: "tester", name: "테스터"});
+	    
+	 	$.ajax({
+			url: "data/param.jsp",
+			type: "POST",
+			data: {id: "tester", name: "테스터"},
+			dataType: "html"    
+		})
+		.done(function (data, status, jqXHR) {
+			$("#resultDiv").html(data);
+			console.log("status", status);
+			console.log("jqXHR");
+			console.log(jqXHR);
+		});
+	 	*/
+		
+		$("#resultDiv").load(
+    		"data/param.jsp", 
+    		{id: "tester", name: "테스터"},
+    		function (data) {
+    			$("#resultDiv").html("^^" + data + "^^");		
+    		}
+	    );
+	});
+});
+</script>
+</head>
+<body>
+	<button>Ajax 호출</button>
+	<div id="resultDiv"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

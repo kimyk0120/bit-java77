@@ -1,0 +1,97 @@
+<!-- 
+	$.post( ... );
+	
+	->
+	
+	$.ajax({
+		type: "POST",
+		url: "...",
+		data: "..."
+	});
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jquery-2.2.0.js"></script>
+<script>
+$(document).ready(function () {
+	$("button").click(function () {
+		// data/test.html 호출
+		// get 방식으로
+		// 결과는 resultDiv
+		/*
+		$.ajax({
+			url: "data/test.html",
+			type: "POST"
+		})
+		.done(function (data) {
+			$("#resultDiv").html(data);
+		});
+		
+		$.post("data/test.html")
+		.done(function (data) {
+			$("#resultDiv").html(data);
+		});
+		*/
+		
+		/*
+	 	$.ajax({
+			url: "data/resJson.jsp",
+			type: "POST",
+			dataType: "json"    
+		})
+		.done(function (data, status, jqXHR) {
+			console.log(data);
+			$("#resultDiv").html(
+				"name : " + data.name + "<br />" +
+				"age :  " + data.age  + "<br />" +
+				"addr : " + data.addr
+			);
+		});
+		
+
+		$.post("data/param.jsp", 
+			  {id: "tester", name: "테스터"}, 
+			  function (data) {
+				  $("#resultDiv").html(	data );  
+			  }
+		);
+		*/
+		$.post("data/resJson.jsp", "json")
+		.done(function (data, status, jqXHR) {
+			console.log(data);
+			$("#resultDiv").html(
+				"name : " + data.name + "<br />" +
+				"age :  " + data.age  + "<br />" +
+				"addr : " + data.addr
+			);
+		});
+
+		
+	});
+});
+</script>
+</head>
+<body>
+	<button>Ajax 호출</button>
+	<div id="resultDiv"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

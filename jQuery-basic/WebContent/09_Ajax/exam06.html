@@ -1,0 +1,40 @@
+<!-- 
+	$.param({});  
+	- 객체의 내용을 파라미터 형식의 문자열로 변환
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jquery-2.2.0.js"></script>
+<script>
+$(document).ready(function () {
+	$("button").click(function () {
+		var result = $.param({name: "hong", id: "h1234"});
+		$("#resultDiv").html(result);
+	});
+});
+</script>
+</head>
+<body>
+	<button>Ajax 호출</button>
+	<div id="resultDiv"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

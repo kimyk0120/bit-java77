@@ -1,0 +1,48 @@
+<!-- 
+	$.getJSON( ... );
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jquery-2.2.0.js"></script>
+<script>
+$(document).ready(function () {
+	$("button").click(function () {
+		$.getJSON(
+			"data/resJson.jsp",
+			function (data) {
+				$("#resultDiv").html(
+					"name : " + data.name + "<br />" +
+					"age :  " + data.age  + "<br />" +
+					"addr : " + data.addr
+				);
+			}
+		);
+		
+	});
+});
+</script>
+</head>
+<body>
+	<button>Ajax 호출</button>
+	<div id="resultDiv"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

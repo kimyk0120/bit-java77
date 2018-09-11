@@ -1,0 +1,63 @@
+<!-- 
+attr( "속성명" ) : 속성값 얻기
+attr( "속성명", "값" ) : 속성값 설정
+attr(객체) : 여러개의 속성값을 한번에 
+removeAttr( "속성명" ) : 속성 삭제
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>css selectors</title>
+<style type="text/css">
+	p {
+		margin: 0px auto;
+		width: 80%;
+		height: 100px;
+		font-size: 5em;
+	}
+</style>
+<script type="text/javascript" src="../jquery-2.2.0.js"></script>
+<script>
+
+$(document).ready(function() {
+	$("button:eq(0)").click(function() {
+// 		$("img").attr("width","200px");
+// 		$("img").attr("height","300px");
+// 		$("img").attr("title","미쳤네짱이쁘네");
+		
+		// 객체 : { 키 : 값, 키: 값 ,... }
+		$("img").attr({
+			"width":"200px","height":"300px","title":"미쳤네짱이쁘네"
+		});
+	});
+	
+	$("button:eq(1)").click(function() {
+		$("img").removeAttr("title");
+	});
+	
+	$("button:eq(2)").click(function() {
+		var result = $("img").attr("title");
+		$("p").text("title : " + result);
+	});
+	
+	$("button:eq(3)").click(function() {
+		// 이미지변경
+		var ran = Math.floor(Math.random()*4+1);
+		$("img").attr("src","images/pic"+ran+".jpg");
+	});
+});
+
+</script>
+</head>
+<body>
+	<p></p>	
+	<img src="images/pic1.jpg" width="100px" height="150px" />
+	<div>
+		<button>attr 설정</button>
+		<button>attr 삭제</button>
+		<button>attr 추출</button>
+		<button>이미지 변경</button>
+	</div>
+</body>
+</html>
