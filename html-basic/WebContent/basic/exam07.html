@@ -1,0 +1,64 @@
+<!-- 
+	html 에서는 줄넘김이 무시된다
+	또한 중간 탭이나 스페이스가 무시된다
+	br : 줄넘기 태그(\n)
+	&nbsp; : 한칸 띄우기
+	&lt; : <
+	&gt; : >
+	
+	pre : 소스등을 화면에 표시할 때 사용
+	hr : 선긋기
+	h<숫자> : 글자 크기 조절, 숫자(1-6)
+	p: 단락 크기
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	태그 설명<br/>
+	줄넘기 태그는 무엇일까요?<br/>
+	&lt;br/&gt; 태그입니다
+	공백을 띄우는 태그는 ?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;???
+	<br/>
+	<pre>
+	public class Test{
+		public static void main(String [] args){
+			System.out.println("연습입니다.");
+		}
+	}
+	</pre>
+	
+	과정소개<br/>
+	<hr />	
+	
+	<hr color="red"/>
+	<hr color="red" size="5"/>
+	<hr color="red" size="5" width = "200px"/>
+	<hr color="red" size="5" width = "200%"/>
+	<!-- 
+		hr 태그 생성
+		1. width : 선의 넓이
+		2. color : 선의 색깔
+		3. size : 선의 굵기
+	 -->
+	 <h1>가장 큰 글씨(h1)</h1>
+	 <h2>가장 큰 글씨(h2)</h2>
+	 <h3>가장 큰 글씨(h3)</h3>
+	 <h4>가장 큰 글씨(h4)</h4>
+	 <h5>가장 큰 글씨(h5)</h5>
+	 <h6>가장 큰 글씨(h6)</h6>
+	 
+	 <p>오늘은 왠지 눈이 올 것 같아요<br/>
+	 	눈이 오늘 수업을 마치고 팥빙수 먹어요</p>
+	 	
+	 <p>오늘은 왠지 눈이 올 것 같아요<br/>
+	 	눈이 오면 오늘 수업을 마치고 팥빙수 먹어요</p>
+	 	
+	 <p>오늘은 왠지 비가 올 것 같아요<br/>
+	 	비가 오면 오늘 수업을 마치고 김치전을 먹어요</p>
+	 	
+</body>
+</html>
