@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<style type="text/css">
+/* 영역까지 없어짐 */
+#container1{
+ display: none; 
+}
+
+#container2{
+display: block; 
+
+}
+
+/* 엘리먼트만 사라지고 영역은 남음 */
+#container3{
+visibility: hidden;
+}
+#container4{
+visibility: visible;
+}
+</style>
+</head>
+<body>
+    <p>display</p>
+	<div id="container1">
+	   <img alt="누구?" width="318" height="237" src="pic1.jpg" />
+	</div>
+	<div id="container2">
+	   <img alt="누구?" width="318" height="237" src="pic2.jpg" />
+	</div>
+	
+    <p>visibility</p>
+    <div id="container3">
+       <img alt="누구?" width="318" height="237" src="pic1.jpg" />
+    </div>
+    <div id="container4">
+       <img alt="누구?" width="318" height="237" src="pic2.jpg" />
+    </div>
+</body>
+</html>
