@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+
+// 실행중인 파일명
+var currentFile = "";
+var btn;
+var videoFile;
+
+// 시작버튼, 중지버튼 클릭 시
+function playVideo() {
+				
+	if (videoFile.value == "" ) {
+		return false;
+	}
+	
+	// 현재 실행 중인 음악과 선택된 파일명이 다를 경우 정보를 설정
+	if (videoFile.value !== currentFile) {
+		video.src  = videoFile.value;
+		currentFile = videoFile.value;
+	}
+			
+	// 일시중지 상태 일 경우 시작으로 변경
+	if (video.paused) {
+		video.play();
+		
+		btn.innerHTML = "일시중지";
+	} 
+	
+	// 시작 상태일 경우 일시 중지로 변경
+	else {
+		video.pause();
+		btn.innerHTML = "시작";
+	}
+
+}
+
+// -------------------------------
+// 추가
+// -------------------------------
+var progress;
+var video;
+
+window.onload = function () {
+	btn       = document.getElementById('play');
+	videoFile = document.getElementById('videoFile');
+	
+	video = document.getElementById('myVideo');
+	video.volume = document.getElementById('sound').value * 0.1;
+	
+// -------------------------------
+// 추가
+	currentFile = video.src  = "Naruto.mp4"; 
+	btn.innerHTML = "일시중지";
+
+	progress = document.getElementById("progress");
+	
+	progress.onmousedown = function () {
+		video.pause();
+	};
+
+	progress.onmouseup = function () {
+		video.currentTime = parseInt(video.duration * (this.value / 100));
+		video.play();
+		btn.innerHTML = "일시중지";
+	};
+
+	video.ontimeupdate = function () {
+	    progress.value = (100 / video.duration) * video.currentTime;
+	};
+// -------------------------------
+};
+
+// 음소거
+function muteVideo() {
+	console.log(video.muted);
+    video.muted = !video.muted;	
+}
+
+// 볼륨 조절
+function soundVideo(val) {
+    video.volume = val;
+}
+
+// 15초 전으로 이동
+function rewindVideo() {
+    video.currentTime -= 10;
+}
+
+// 15초 앞으로 이동
+function forwardVideo() {
+    video.currentTime += 10;
+}
+
+// 다시 듣기
+function restartVideo() {
+    video.currentTime = 0;
+}
+</script>
+</head>
+<body>
+    <p>
+      <select id="videoFile">
+      	<option value="">=비디오 선택=</option>
+      	<option value="Naruto.mp4" selected>Naruto.mp4</option>
+      	<option value="OnePiece.mp4">OnePiece.mp4</option>
+      </select>
+    </p>
+    
+	<div id="videoDiv">
+		<video id="myVideo" width="720" height="480" autoplay loop>
+		</video>
+	</div>
+    <p>
+		<input id="progress" type="range" 
+		       value="0" style="width: 720px" min="0" max="100" step="1" />
+	</p>	       	
+    <p>
+	    <button id="play" onclick="playVideo();">시작</button>
+	    <button onclick="rewindVideo();">뒤로</button>
+	    <button onclick="forwardVideo();">앞으로</button>
+	    <button onclick="restartVideo();">다시시작</button>
+	    <label><input type="checkbox" onclick="muteVideo();" />음소거</label>
+	    <input id="sound" type="range" min="0" max="1" step="0.1" value="0.5" onchange="soundVideo(this.value)"/> 음량조절
+	</p>
+</body>
+</html>

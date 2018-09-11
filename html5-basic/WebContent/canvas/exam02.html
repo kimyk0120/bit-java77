@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var canvas;
+	var ctx;
+	// 어떤 버튼이 클릭된 상태인지 체크 
+	// true일 경우 그리기 버튼이 눌린 상태
+	// false 일 경우에는 이외의 버튼이 눌린상태 
+	var status = false;
+	window.onload = function() {
+
+		canvas = document.getElementById('myCanvas');
+		// canvas에서 그림을 그리는 영역 얻기 : Context
+		ctx = canvas.getContext('2d');
+		// 그리기 관련 코드 작성
+
+		// 사각형 그리기 : Canvas를 기준으로 x,y 좌표를 지정 
+		ctx.fillRect(0, 0, 600, 400);
+		status = true;
+	}
+
+	function drawFill() {
+		//색채우기
+		ctx.fillRect(0, 0, 600, 400);
+		status = true;
+	}
+
+	function drawStroke() {
+		// 도형 선그리기
+		ctx.clearRect(0, 0, 600, 400)
+		ctx.strokeRect(0, 0, 600, 400);
+
+		status = false;
+	}
+
+	function clearRect() {
+		// 사각형 지우기 
+		ctx.clearRect(0, 0, 600, 400)
+		status = false;
+	}
+
+	function changeColor(color) {
+			ctx.fillStyle = color;
+		if (statue) {
+			ctx.fillRect(0, 0, 600, 400);
+		}
+	}
+</script>
+</head>
+<body>
+
+	<h1>캔버스</h1>
+
+	<canvas id="myCanvas" width="600" height="400"> 브라우져에서 지원되지 않습니다.</canvas>
+	<br />
+	<select onchange="changeColor(this.value)">
+		<option value="black">black</option>
+		<option value="red">red</option>
+		<option value="blue">blue</option>
+		<option value="orange">orange</option>
+	</select>
+	<button onclick="drawFill()">색채우기</button>
+	<button onclick="drawStroke()">선그리기</button>
+	<button onclick="clearRect()">지우기</button>
+
+</body>
+</html>

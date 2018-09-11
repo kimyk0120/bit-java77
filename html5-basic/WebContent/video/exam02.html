@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="videoDiv">
+		<video width="720" height="280" id="myVideo">
+			<source src="Naruto.mp4">
+		</video>
+	</div>
+	<p>
+		<button onclick="playVideo()" id="play">시작</button>
+		<button onclick="backVideo()">뒤로</button>
+		<button onclick="forVideo()">앞으로</button>
+		<button onclick="restartVideo()">다시시작</button>
+		<input type="checkbox" id="mute" onchange="mute()">음소거 <input
+			type="range" id="od" value="0.5" max="1" min="0" step="0.1"
+			onchange="soundVideo(this.value);"> 음량조절
+	</p>
+
+	<script type="text/javascript">
+		var video = document.querySelector("#myVideo");
+
+		function playVideo() {
+
+			if (video.paused) {
+				video.play();
+				document.querySelector("#play").innerText = "일시중지";
+			} else {
+				video.pause();
+				document.querySelector("#play").innerText = "시작";
+			}
+
+		}
+
+		function backVideo() {
+			video.currentTime -= 10;
+		}
+		function forVideo() {
+			video.currentTime += 10;
+		}
+		function restartVideo() {
+			video.currentTime = 0;
+		}
+
+		//음소거
+		function mute() {
+			if (video.muted)
+				video.muted = false;
+			else
+				video.muted = true;
+		}
+
+		//음량조절 레인지바
+		// 볼륨 조절
+		function soundVideo(val) {
+			video.volume = val;
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

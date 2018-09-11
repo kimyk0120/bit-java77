@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"> 브라우져에서 지원되지 않습니다.</canvas>
+
+<script type="text/javascript">
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext('2d');
+		
+		ctx.strokeRect(0,0,400,400);
+		ctx.beginPath();
+		//얼굴
+		ctx.arc(200,200,200,0,2 * Math.PI,true);
+		// 코
+		ctx.moveTo(200,200);
+		ctx.lineTo(80,250);
+		ctx.lineTo(200,250);
+		ctx.stroke();
+		ctx.beginPath();
+
+		// 입		
+		ctx.arc(200,270,100,0,1 * Math.PI,false);
+		ctx.stroke();
+		
+		
+		// 외쪽눈
+		ctx.beginPath();
+		ctx.arc(100,130,30,0,2 * Math.PI,false);
+		ctx.fillStyle="#003300";
+		ctx.fill();		
+
+		// 왼쪽눈알
+		ctx.beginPath();
+		ctx.arc(100,130,50,0,2 * Math.PI,false);
+		ctx.stroke();
+
+		// 오른쪽눈
+		ctx.beginPath();
+		ctx.arc(300,130,30,0,2 * Math.PI,false);
+		ctx.fillStyle="#003300";
+		ctx.fill();		
+
+		// 오른쪽 눈알
+		ctx.beginPath();
+		ctx.arc(300,130,50,0,2 * Math.PI,false);
+		ctx.stroke();
+		
+		//외쪽눈썹
+		ctx.beginPath();
+		ctx.arc(100,80,50,0,1 * Math.PI,true);
+		ctx.stroke();
+		
+		// 우눈썹
+		ctx.beginPath();
+		ctx.arc(300,80,50,0,1 * Math.PI,true);
+		ctx.stroke();
+		
+		
+		ctx.stroke();
+		//arc(x,y,radius,st,en,방향설정)
+		// n * Math.PI / 180
+// 		ctx.arc(100,200,100,0,0.5,true);
+// 		ctx.strokeStyle="#003300";
+// 		ctx.fillStyle="#003300";
+// 		ctx.fill();
+	</script>
+
+
+</body>
+</html>

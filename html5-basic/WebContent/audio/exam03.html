@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	background: tomato;
+	color: white;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+	<!-- 		<source src="한예슬 - 그댄 달라요.mp3" type="audio/mpeg"> -->
+	<audio id="myAudio"></audio>
+	<p>
+		<select id="audioFile">
+			<option value="">선택</option>
+			<option value="exid.mp3">exid.mp3</option>
+			<option value="한예슬 - 그댄 달라요.mp3">한예슬 - 그댄 달라요.mp3</option>
+		</select>
+	</p>
+	<p>
+		<span id="cTime">0:0</span>
+		<button id="play">시작</button>
+		<button id="forward">앞으로</button>
+		<button id="backward">뒤로</button>
+		<button id="restart">다시시작</button>
+	</p>
+		
+	
+	<canvas id="myCanvas" width="500" height="20" style="border: 1px solid black; margin-top:10px;
+	 		padding: 2px;"></canvas>	
+	
+	
+	<div></div>
+
+	<script type="text/javascript">
+		var audio = document.getElementById("myAudio");
+		audio.addEventListener("timeupdate", function(event) {
+
+			var time = document.querySelector("#cTime");
+			var curTime = audio.currentTime;
+			var totalTime = audio.duration;
+
+			var text = parseInt(curTime / 60) + ":" + parseInt(curTime % 60)
+			time.innerHTML = text;
+
+			// canvas 플레이 시간 표시하기
+			var cTime = parseInt(curTime); 
+			// context 객체 얻기 
+			var ctx = canvas.getContext("2d");
+			
+			// 캔버스 전체 영역 지우기
+			ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
+			// 캔버스 색상을 토마토 변경
+			ctx.fillStyle = "tomato";
+			
+			//캔버스에 플레이 시간 만큼 사각형을 그리고 색을 칠하기 
+			var cWidth = (cTime/totalTime)*	canvas.clientWidth;	
+			if(cWidth >0){
+				ctx.fillRect(0,0, cWidth,canvas.clientHeight);
+			}
+			
+		});
+
+		var audio = document.querySelector("#myAudio");
+		// 현재 재생중인 음악파일
+		var currentFile = "";
+
+		document.querySelector("#play").onclick = function() {
+			// 선택한 음악 파일을 얻기
+			var audioFile = document.querySelector("#audioFile");
+			if (audioFile.value == "") {
+				alert("재생할 파일을 선택해라")
+				return false;
+			}
+
+			// 현재 재생중인 파일일 경우에 무시한다.
+			if (currentFile != audioFile.value) {
+				audio.src = audioFile.value;
+				currentFile = audioFile.value;
+			}
+			
+			// 현재 오디오가 중지된 상태인 경우 
+			// 오디오를 플레이 시키고 버튼의 텍스트를 일시중지로 변경
+			if(audio.paused){
+				//오디오 플레이 시키기 
+				audio.play();
+				document.querySelector("#play").innerText ="일시중지";
+			}else{
+				audio.pause();
+				document.querySelector("#play").innerText ="시작";
+			}
+			
+		};
+		
+		document.querySelector("#forward").onclick = function() {
+			audio.currentTime += 10;
+		}
+		
+		document.querySelector("#backward").onclick = function() {
+			
+			audio.currentTime -= 10;
+		}
+		
+		document.querySelector("#restart").onclick = function() {
+			
+			audio.currentTime = 0;
+		}
+		
+		var canvas = document.querySelector("#myCanvas");
+		
+		canvas.onclick = function(event) {
+			
+			audio.currentTime = ( event.offsetX/ canvas.clientWidth) * audio.duration;
+			
+			console.log("event.offsetX", event.offsetX);
+			console.log("canvas.clientWidth", canvas.clientWidth);
+			
+		}
+		
+	</script>
+</body>
+</html>
