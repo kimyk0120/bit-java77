@@ -1,0 +1,48 @@
+<!-- 
+	엘리먼트 삭제
+	removeChild
+	
+	lastChild
+	firstChild
+	부모.removeChild(자식);
+	
+	부모 엘리먼트 : parentNode;
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function add(){
+	// id가 c인 엘리먼트에 H1 엘리먼트 생성 후 추가
+	var cDiv = document.getElementById("c"); // 셀렉트쿼리, getElementById 2가지 방법
+//		var hEle = document.createElement("h1");
+//		var msg = "H1 "+cDiv.childElementCount;
+//		var tNode = document.createTextNode(msg);
+//		hEle.appendChild(tNode);
+//		cDiv.appendChild(hEle);
+	var html = "<h1>"+"H1 "+cDiv.childElementCount+"</h1>";
+	cDiv.innerHTML += html;
+}
+function del(){
+	// cDiv를 삭제 처리함
+	var cDiv = document.getElementById("c");
+	// 삭제할 cDiv의 부모 노드 가져오기
+	var pNode = cDiv.parentNode;
+	pNode.removeChild(cDiv);
+}
+</script>
+</head>
+<body>
+	<p>
+		<button onclick="add()">추가</button>
+		<button onclick="del()">삭제</button>
+	</p>
+	<div id="a">A div</div>
+	<div id="b">
+		B div
+		<div id="c"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표준 이벤트 등록 방식</title>
+<style type="text/css">
+h1 {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	background: tomato;
+	color: white;
+}
+</style>
+<script type="text/javascript">
+	// 도큐먼트 정보가 로딩된 다음 실행
+	window.onload = function() {
+		//h1 객체에 이번트 정보를 등록
+		var hObj = document.getElementById("hObj");
+
+		//표전 이벤트 방식
+
+		//대상객체.addEventListener("이벤트 타입",처리함수, 이벤트 전파방식)
+		hObj.addEventListener("click", function() {
+			alert("표준 이벤트 방식으로 처리됨");
+
+			// 배경색을 skyblue로 변경
+// 			hObj.style.background = "skyblue";
+			this.style.background = "skyblue";
+			
+		});
+
+		//고전방식임..
+		// 		hObj.onclick = function () {
+
+		// 		}
+	}
+</script>
+</head>
+<body>
+	<h1 id="hObj">표준 이벤트 방식 살펴보기</h1>
+</body>
+</html>

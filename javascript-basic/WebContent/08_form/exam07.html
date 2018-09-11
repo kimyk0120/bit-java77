@@ -1,0 +1,79 @@
+<!-- 
+
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function ckForm() {
+		// select 박스 참조 얻기 
+		var f = document.mForm;
+		// select 박스 하위의 option 엘리먼트 배열
+		var optArr = f.sType.options;
+		// 		alert(optArr.length);
+
+		// 		for (var i = 0; i < optArr.length; i++) {
+		// 			console.log(optArr[i].value);
+		// 		}
+
+		//select 박스에 선택된 option의 index(위치)를 반환 
+		var ind = f.sType.selectedIndex;
+		console.log("선택된 인덱스 : " + ind)
+
+		// 선택된 인덱스 항목의 value 값을 출력 
+		console.log("선택된 항목 값" + optArr[ind].value)
+
+		var text = f.sWord;
+
+		if (ind != 0) {
+
+			if (f.sWord.value == "") {
+				alert("검색어를 입력하시오");
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	function changeDisable(status) {
+	
+		//select 박스 사용 여부 변경하기
+		document.mForm.sType.disabled = status;
+
+		// select 의 option 항목 선택 변경하기
+		document.mForm.sType.selectedIndex = 0;
+	}
+</script>
+</head>
+<body>
+	<form name="mForm" onsubmit="return ckForm();">
+		<select name="sType"><option value="">선택하세요</option>
+			<option value="writer">글쓴이</option>
+			<option value="title">제목</option>
+		</select> <input type="text" name="sWord" size="40px"> <input
+			type="submit" value="검색">
+	</form>
+
+	<p>
+		<button onclick="changeDisable(true);">비활성화</button>
+		<button onclick="changeDisable(false);">활성화</button>
+	</p>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

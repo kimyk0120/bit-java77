@@ -1,0 +1,25 @@
+<!--  -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="exam01.js"></script>
+<script type="text/javascript">
+	var data = new MyMap();
+	data.put("id", "sbc");
+	data.put("name", "son");
+
+	console.log(data.size()) //2
+	console.log(data.get("id")) //sbc
+
+	data.del("id");
+	console.log(data.get("id")) // undefined
+	data.clear();
+	console.log(data.size()) // 0
+</script>
+</head>
+<body>
+
+</body>
+</html>

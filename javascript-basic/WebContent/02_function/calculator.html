@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function call(val) {
+		var result = document.getElementById("result");
+		result.value = result.value + val;
+	}
+	function exe() {
+
+		var result = document.getElementById("result");
+		alert(result.value);
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="4"><input type="text" id="result"><br></td>
+		</tr>
+
+		<tr>
+			<td><input type="button" id="seven" onclick="call(7)" value="7"></td>
+			<td><input type="button" id="eight" onclick="call(8)" value="8"></td>
+			<td><input type="button" id="nine" onclick="call(9)" value="9"></td>
+			<td><input type="button" id="div" onclick="call('/')" value="/"></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="four" onclick="call(4)" value="4"></td>
+			<td><input type="button" id="five" onclick="call(5)" value="5"></td>
+			<td><input type="button" id="six" onclick="call(6)" value="6"></td>
+			<td><input type="button" id="mul" onclick="call('*')" value="*"></td>
+		</tr>
+
+		<tr>
+			<td><input type="button" id="one" onclick="call(1)" value="1"></td>
+			<td><input type="button" id="two" onclick="call(2)" value="2"></td>
+			<td><input type="button" id="three" onclick="call(3)" value="3"></td>
+			<td><input type="button" id="minu" onclick="call('-')" value="-"></td>
+		</tr>
+
+		<tr>
+			<td><input type="button" id="zero" onclick="call(0)" value="0"></td>
+			<td><input type="button" id="dot" onclick="call('.')" value="."></td>
+			<td><input type="button" id="plus" onclick="call('+')" value="+"></td>
+			<td><input type="button" id="rem" onclick="call('%')" value="%"></td>
+			
+		</tr>
+	<tr>
+		<td colspan="2"><input type="button" id="cal" onclick="cal()" value="계산"></td>
+		<td colspan="2"><input type="button" id="clear" onclick="clear()" value="clear"></td>
+	
+	</tr>
+
+
+	</table>
+</body>
+</html>

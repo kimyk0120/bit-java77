@@ -1,0 +1,39 @@
+<!-- 
+	문자열과 숫자 타입의 + 연산이외가 있는 경우 결과가 숫자 우선
+	문자열이 숫자 타입의 값이 아닌 경우에는 결과는 "NaN" (Not a Number)
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("1" + 20); // 문자열 120
+	console.log('1' + 20); // 문자열 120
+	console.log('2' * 20); // 숫자 40 
+	console.log('20' - 10); // 숫자 10 
+
+	console.log('abc' - 10); //   NaN
+
+	// 문자를 숫자로 변경하기
+	// parseint 또는 Number 활용
+	// 차이점 : 
+	// parseint 는 숫자로 변경할 수 있는 부분까지 변경처리 
+	// Number는 숫자일 경우만 가능함
+	var n = parseInt("100");
+	var n2 = Number("100");
+	console.log(n);
+	console.log(n);
+
+	n = parseInt("100abc"); //100
+	n2 = Number("100abc"); //NaN
+	console.log(n);
+	console.log(n2);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

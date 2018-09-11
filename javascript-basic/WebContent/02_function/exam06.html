@@ -1,0 +1,37 @@
+<!-- 
+	글로벌 변수, 글로벌 함수
+	- 선언시 var 를 사용하지 않은것 
+	- 함수 안에서 선언하지 않은것
+	
+	지역 변수 , 함수	
+	- 함수 안에서 var 키워드와 함께 선언된 변수 
+	- 매개변수는 지역변수임
+	- 자신이 선언된 함수 내에서만 사용 가능
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var msg = "글로벌 변수";
+
+	function func() {
+		var i = 100; //지역 번수
+		j = 200; //글로벌 변수 
+		console.log(msg);
+		console.log(j);
+	}
+	
+	func();
+
+	console.log(msg);
+	console.log(j);  // 함수 안이지만 var 선언이 안된 글로별 변수이기 때문에 출려가능
+	console.log(i);  // 지역 변수이므로 오류 발생
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

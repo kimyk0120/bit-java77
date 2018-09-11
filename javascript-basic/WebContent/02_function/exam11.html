@@ -1,0 +1,34 @@
+<!-- 
+	변수의 스코프 
+	
+	지역 변수 - 함수내에 선언된 변수 
+			  - 선언된 함수 전체에서 사용됨
+	글로벌 변수 - 함수 밖에서 선언된 변수 , var 를 붙이지 않은것
+				- 전체 스트립트 영역에서 전부 사용  
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var msg = "전역변수";
+	
+	
+	function func() {
+		console.log(msg);
+		var msg = "func 지역변수 ";
+
+		/*
+		var msg;
+		console.log(msg);
+		msg = "func 지역변수 ";
+		*/
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

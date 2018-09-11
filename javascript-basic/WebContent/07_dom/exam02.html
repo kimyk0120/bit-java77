@@ -1,0 +1,33 @@
+<!-- 
+	속성 추가하기
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function doAdd(){
+		// <h1 id="test">속성 추가 테스트</h1>
+		var hObj = document.createElement("h1");
+		hObj.id = "test";
+		//Dom API를 활용
+		hObj.setAttribute("name","test");
+		// Dom API를 활용한 방식만 사용자가 직접 정의하는 속성을 추가할 수 있다
+		hObj.msg = "메세지 추가"; // 추가 되지 않는다
+		hObj.setAttribute("mymsg","메세지 추가"); 
+		
+		var tObj = document.createTextNode("속성추가 테스트");
+		
+		hObj.appendChild(tObj);
+		var divObj = document.getElementById("result");
+		divObj.appendChild(hObj);
+	}
+</script>
+</head>
+<body>
+	<button onclick="doAdd()">추가</button>
+	<div id="result"></div>
+</body>
+</html>

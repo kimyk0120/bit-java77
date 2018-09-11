@@ -1,0 +1,9 @@
+	자바스크립트 내장 함수 
+	- setTimeout : 특정 시간이 지난 후 호출
+	- clearTimeout : setTimeout 지정된 내용을 지우는 것
+	
+	HTML input 의 onclick 에 메서드를 호출하는 형식을 취하여 
+	<script>에서 메서드를 정의 할 수 있다. 
+	document.getElementById 로 div태그에 id이름으로 파라미터 값을 가져온다.
+	현재 시간정보는 자바와 마찬가지로 var date = new Date(); 로 생성가능하다.
+	.innerHTML 로 body로 접근가능하다.

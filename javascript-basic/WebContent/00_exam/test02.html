@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function ckForm() {
+	// select 박스 참조 얻기 
+	var f = document.mForm;
+	
+	var name = f.userName.value;
+	
+	if(name==""){
+		alert("이름를 입력하세요")
+		return false;
+	}
+	
+	var id = f.userID.value;
+	
+	if(id==""){
+		alert("ID를 입력하세요")
+		
+		return false;
+	}
+	
+	if(f.userID.value.length < 4 || f.userID.value.length > 8){
+		
+		alert("ID는 4자이상 8자이하 입니다.")
+		return false;
+	}
+	
+	var pass = f.pass.value;
+	
+
+	if(pass==""){
+		alert("비밀번호를 입력하세요")
+		return false;
+		
+	}
+	
+	var ckPass = f.ckPass.value;
+	
+	if(ckPass==""){
+		
+		alert("비밀번호 확인를 입력하세요")
+		return false;
+		
+		
+	}
+
+	if(ckPass != pass){
+		
+		alert("비밀번호가 일치하지 않습니다.")
+		return false;
+		
+	}
+		
+	
+	var ind = f.wYear.selectedIndex;
+	
+	if(ind == 0){
+		alert("경력 체크 시 경력을 선택하세요")
+		return false;
+		
+	}
+	
+	if(f.acEmail.checked && f.email.value == ""){
+		
+		alert("메일 수신 체크 시 이메일을 입력하세요")
+		return false;
+	}
+	
+
+
+	
+	alert("모두성공")
+	return true;
+}
+
+function changeDisable(status) {
+	
+	//select 박스 사용 여부 변경하기
+	document.mForm.wYear.disabled = true;
+
+	// select 의 option 항목 선택 변경하기
+	document.mForm.wYear.selectedIndex = 0;
+	
+	document.mForm.nBy.checked = true;
+}
+
+function changeDisable2(status){
+	//select 박스 사용 여부 변경하기
+	document.mForm.wYear.disabled = false;
+
+	// select 의 option 항목 선택 변경하기
+	document.mForm.wYear.selectedIndex = 0;
+	
+	document.mForm.oBy.checked = true;
+}
+</script>
+</head>
+<body>
+	<form name="mForm" onsubmit="return ckForm();">
+
+		이름 <input type="text" name="userName" id="uName"><br> 아이디
+		<input type="text" name="userID"><br> 비밀번호 <input
+			type="password" name="pass"> 비밀번호확인 : <input type="password"
+			name="ckPass"><br> 경력여부 <input type="checkbox"
+			name="nBy" onclick="changeDisable2(this)">신입 <input
+			type="checkbox" name="oBy" checked="checked"
+			onclick="changeDisable(this);"> 경력 <select name="wYear">
+			<option value="">선택</option>
+			<option value="1">1년이상</option>
+			<option value="2">2년이상</option>
+			<option value="3">3년이상</option>
+			<option value="4">20년이상</option>
+		</select> <br> 이메일 <input type="text" name="email"> <input
+			type="checkbox" name="acEmail" checked="checked">메일수신 <br>
+
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!-- 
+
+	변수는 중복선언이 가능함
+	var id = "hong";
+	console.log(id);
+	var id = "kim";
+	console.log(id);
+	
+	호이스팅 : 선언된 변수와 함수를 스크립트의 가장 위쪽으로 끌어올리는 작업
+	
+	컴파일 시점에 발생
+	var id;
+	
+	실행 시점
+	id = "hong";
+	console.log(id);
+	
+	id = "kim";
+	console.log(id);
+	
+	--------------------------------------------------------------------------
+	함수도 변수와 마찬가지로 중복선언이 가능함
+	함수의 호이스팅 작업은 선언적 함수일 경우만 발생, 익명함수는 발생하지 않는다.
+	function test()
+	var test	
+
+
+	var test = function (){ }
+	
+	function test(){ }
+
+	function test(){ }
+
+
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function func(){
+		console.log("func - 1")		
+	}
+	func();  //3
+	function func(){
+		console.log("func - 2")		
+	}
+	
+	func(); //3
+	function func(num){
+		console.log("func - 3")		
+	}
+
+	func(100); //3
+	func();    //3, 함수들은 컴파일시 다들 끌어올리기 때문에 젤 마지막이 실행되고 , 매개변수와 상관이없음
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>

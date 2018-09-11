@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	background: #000;
+	color: #fff;
+	padding: 20px;
+	font-size: 40px;
+	position: absolute;
+	width: 600px;
+	height: 400px;
+	top: -440px;
+	left: 200px;
+}
+
+#div2 {
+	background: #456789;
+}
+</style>
+<script type="text/javascript">
+	var x = -440;
+	var cPos = 1; // 현재 슬라이드 번호 
+
+	function nextSlide() {
+		
+		if(cPos>2){
+			alert("마지막 슬라이드입니다.")
+			return;
+		}
+		
+		
+		x += 1;
+		var obj = document.getElementById("div" + cPos);
+		obj.style.top = x + "px";
+
+		if (x < 100) {
+
+			setTimeout(nextSlide, 5);
+		} else {
+			cPos++;
+			x = -440;
+		}
+
+	}
+</script>
+</head>
+<body>
+	<p>
+		<a href="#1" onclick="nextSlide()">슬라이드 보기</a>
+	</p>
+
+	<div id="div1">슬라이드 1번</div>
+	<div id="div2">슬라이드 2번</div>
+
+</body>
+</html>

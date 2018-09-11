@@ -1,0 +1,35 @@
+
+<!-- 
+	동적으로 객체에 속성 삭제하기
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//회원 정보 3명 생성
+	// hong 홍 22
+	// park 박 33
+	// kim 김 44
+
+	function createMember(id, name, age) {
+		var members = {
+			id : id,
+			name : name,
+			age : age,
+			info : function() {
+				console.log(this.id, this.name, this.age);
+			}
+		};
+		return members;
+	}
+
+	var members = [ createMember("hong", "홍", 22),
+			createMember("park", "박", 33), createMember("kim", "김", 44) ];
+</script>
+</head>
+<body>
+
+</body>
+</html>

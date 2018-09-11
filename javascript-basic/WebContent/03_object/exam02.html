@@ -1,0 +1,42 @@
+<!-- 
+	객체에 프롬퍼티를 설정하고 추출하는 방법
+	
+	객체.키 = 값;
+	객체["키"] = 값;
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//객체 생성시에 설정
+	var obj1 = {
+		"id" : "hong"
+
+	// 프로퍼티에 객체, 함수, 등등이 모두 설정될 수 있다. 
+	// 		, name : "홍길동"
+	// 		addr : { postNo : "1230-13" , basicAddr : "서울 어디어디"}
+	
+	};
+
+	
+	//생성 후에 설정
+	obj1.name = "홍길동";
+	obj1["age"] = 33;
+
+	console.log("id", obj1.id);
+	console.log("name", obj1.name);
+	console.log("age", obj1.age);
+
+	//출력결과
+	// 	 id hong
+	// 	 name 홍길동
+	// 	 age 33
+</script>
+</head>
+<body>
+
+</body>
+</html>

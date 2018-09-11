@@ -1,0 +1,51 @@
+<!--
+	자바스크립트 내장 함수 
+	- setInterval : 특정 시간이 지난 후 호출(반복적)
+	- clearInterval : setInterval 지정된 내용을 지우는 것   
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#timeDiv {
+	background: black;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 30px;
+	padding: 10px;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	var timeId;
+
+	function clockStart() {
+		// 아이디가 timeDiv인 엘리먼트 정보를 가져온다.
+		var timeDiv = document.getElementById("timeDiv");
+
+		// 시간 정보 얻기
+		var date = new Date();
+		timeDiv.innerHTML = date.toLocaleString();
+
+		if (!timeId) {  
+
+			timdId = setInterval(clockStart, 1000);
+		}
+
+	}
+	
+	function clockEnd() {
+		clearInterval(timdId);
+		timeId = null;
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="시작" onclick="clockStart()" />
+	<input type="button" value="정지" onclick="clockEnd()" />
+	<div id="timeDiv">시간 정보 출력</div>
+</body>
+</html>

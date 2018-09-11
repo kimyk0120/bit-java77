@@ -1,0 +1,40 @@
+<!-- 
+	alert : 단순 알림창
+	confirm : 확인창(확인, 취소)
+	prompt : 입력창(확인, 취소 )
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	alert("알림창");
+
+	//확인창
+	//팝업에서 확인버튼 클릭시 ture 값이 반환
+	//팝업에서 취소버튼 클릭시 false 값이 반환
+
+	var isDel = confirm("삭제할까요?");
+	console.log("isDel :  " + isDel);
+
+	if (isDel == true) {
+
+		console.log("삭제작업 진행");
+
+	} else {
+		console.log("아무작업 안함");
+
+	}
+
+	//입력창
+	//팝업에서 입력한 내용이 반환 (String)
+	var msg = prompt("테스트", "메시지 입력하세요!");
+	console.log("msg :  " + msg);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

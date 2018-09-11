@@ -1,0 +1,28 @@
+<!-- 
+	*중요*
+	ES5에서 추가된 JSON.parse(string) - json만 가능
+				   eval(string) 	  - 모든 코드 가능
+	-----------------------------------------------
+	string에 입력된 값이 만약, JSON 형태라면 
+	실행시켜 json 객체를 반환한다.
+	
+	json(자바스크립트 오브젝트 노테이션) 은 자바스크립트 리터럴 객체 형태와 동일한데 
+	단, 키값을 "" 문자열로 묶어줘야 한다. - *제이슨 형태의 중요 특징*
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var code = '[{"id" : "hong" , "msg" : "hi!" }]';
+	var obj = JSON.parse(code);
+	// 	console.log(code.id); //문자열형태라 불가능
+	console.log(obj.msg);
+</script>
+</head>
+<body>
+
+</body>
+</html>

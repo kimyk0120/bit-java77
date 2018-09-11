@@ -1,0 +1,25 @@
+<!-- 
+	함수의 매개변수로 object 넘겨줄 경우
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	var arr = [1,2,3,4,5];
+	function func(arr){
+		arr.pop(); // 마지막 요소 삭제  
+		console.log(arr);
+	}
+	func(arr); // 출력결과 : 1,2,3,4  
+
+	console.log(arr); //배열은 참조형이므로 위와 결과 같음
+	// 기본형은 변수에 영향을 미치지 않는다.
+</script>
+</head>
+<body>
+
+</body>
+</html>

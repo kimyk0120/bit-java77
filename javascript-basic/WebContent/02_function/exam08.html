@@ -1,0 +1,42 @@
+<!--
+	arguments
+	-------------------------------------
+	- 함수에 매개변수를 담고있는 배열 
+	- 함수 자체에 내장되어 있는 변수
+	- 매개변수의 개수와 상관없이 호출이 가능
+	---------------------------------------
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function func() {
+		if (arguments.lenth == 0) {
+			console.log("매개변수 없음");
+			return;
+		}
+		if (arguments.lenth == 1) {
+			console.log(arguments[0]);
+			return;
+		}
+		for ( var key in arguments) {
+			console.log(arguments[key]);
+			return;
+		}
+
+	}
+
+	func(); // 매개변수 없음
+
+	func(1); // 1
+
+	func(1, 2); // 1 
+	// 2
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- 
+	배열안의 요소 확인
+	for 반복문 활용
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [ 1, 2, 3 ];
+
+	// arr 배열의 요소의 합계를 출력
+	var sum = 0;
+	for (var i = 0; i < arr.length; i++) {
+		sum += arr[i];
+	}
+	console.log("arr 요소의 합 : " + sum);
+	
+	
+	// for - in 반복문 활용
+	// **배열은 값에 대한 키값으로 자동 숫자 0부터 할당됨
+	sum = 0;
+	for (var key in arr) { 
+		sum += arr[key];
+	}
+	console.log("arr 요소의 합 : " + sum);
+	
+	// 배열에 요소를 추가(마지막)
+	arr[arr.length] = 40;  
+	
+	console.log("arr : " + arr);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

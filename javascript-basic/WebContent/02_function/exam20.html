@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function call(val) {
+		var result = document.getElementById("result");
+		result.value = result.value + val;
+	}
+	function exe() {
+		
+		var result = document.getElementById("result");
+		alert(result.value);
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="result">
+	<input type="button" id="one" onclick="call(1)">
+	<input type="button" id="exe" onclick="exe()">
+</body>
+</html>

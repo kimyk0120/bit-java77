@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function doClose() {
+
+		var num1 = document.getElementById("num1");
+		var a = document.getElementById("a");
+		var num2 = document.getElementById("num2");
+
+		eval("var result = " + num1.value + a.value + num2.value);
+
+		opener.fn_result(result);
+
+		self.close();
+	}
+</script>
+</head>
+<body>
+
+	<h1>계산 자식 창</h1>
+	<input type="text" id="num1" />
+
+
+	<select id="a">
+		<option value="+">+</option>
+		<option value="*">*</option>
+		<option value="-">-</option>
+	</select>
+
+	<input type="text" id="num2" />
+
+	<button onclick="doClose();">계산</button>
+
+</body>
+</html>

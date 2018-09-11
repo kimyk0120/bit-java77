@@ -1,0 +1,63 @@
+<!--
+	자바스크립트 내장 함수 
+	- setTimeout : 특정 시간이 지난 후 호출
+	- clearTimeout : setTimeout 지정된 내용을 지우는 것   
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#timeDiv {
+	background: black;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 30px;
+	padding: 10px;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+
+	//setTimeout 실행시에 아이디 저장
+	var timeId;
+
+	function clockStart() {
+		// 아이디가 timeDiv인 엘리먼트 정보를 가져온다.
+		var timeDiv = document.getElementById("timeDiv");
+
+		// 시간 정보 얻기
+		var date = new Date();
+		timeDiv.innerHTML = date.toLocaleString();
+
+		// 1초마다 clockStart 함수 호출 
+		timeId = setTimeout(clockStart, 1000);
+
+		
+		/*
+		console.log(timeDiv);
+		// <div> innerHTML 영역 </div> 
+		console.log(timeDiv.innerHTML);
+
+		// 기존 내용에 내용 추가 
+		timeDiv.innerHTML += " 추가됨~";
+		
+		// 		// 내용 변경하기
+		// 		timeDiv.innerHTML = "변경됨~";
+		 */
+
+	}
+	function clockEnd() {
+		// 취소시킬 setTimeout 함수에 아이디를 넘겨준다. 
+		clearTimeout(timeId);
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="시작" onclick="clockStart()" />
+	<input type="button" value="종료" onclick="clockEnd()" />
+	<div id="timeDiv">시간 정보 출력</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- 
+	getElementById : 아이디 속성의 값으로 검색된 태그 반환
+	getElementsByTagName : 태그 이름으로 검색된 태그들을 반환
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		function changeDiv(){
+			var list = document.getElementsByTagName("div"); // 배열 형태의 데이터가 넘어온다
+		console.log(list.length);
+		
+		for(var i=0;i<list.length;i++){
+			console.log(list[i]);
+			console.log(list[i].id); // 속성 가져올때 getAttribute, .으로 가져오기
+				if(list[i].id=='c'){ // innerHTML, innerText->비추, textContent
+					list[i].innerHTML = "변경";
+				}
+		}
+			alert("다시 변경함");
+			var cDiv = document.getElementById("c");
+			cDiv.innerHTML = "다시 변경됨";
+		}
+	</script>	
+</head>
+<body>
+	<input type = "button" value = "변경" onclick="changeDiv()"/>
+	<div id="a">
+		A div
+	</div>
+	<div id="b">
+		B div
+		<div id="c">
+			C div 
+		</div>
+	</div>
+</body>
+</html>

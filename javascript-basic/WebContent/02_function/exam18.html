@@ -1,0 +1,39 @@
+<!-- 
+	eval (문자열로된 자바스크립트 코드를 동적으로 실행시켜준다.)
+	
+	
+	
+
+	
+	
+	
+	JAVA
+	--------------------------------
+	String s = "int i = 100";
+	System.out.print(s);
+	
+	System.out.print(i);   //불가능
+	--------------------------------
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var code = "var i = 100;"
+		code += "var j = 200;"
+		code += "alert (i+j);"
+		code += "var sum = i +j;"
+	// code 안의 문자열의 내용을 실행
+	eval(code);
+	
+	
+	alert(sum);
+</script>
+</head>
+<body>
+
+</body>
+</html>

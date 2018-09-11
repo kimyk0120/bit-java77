@@ -1,0 +1,23 @@
+<!-- 
+	Javascript 를 사용하기 위해서는 <script> ... <script> 태그를 사용 
+	문서상의 어떤 위치에서 사용하든 상관없음
+	권장되는 위치 : head 태그가 끝나기 전, body태그가 끝나기전
+ -->
+
+<!DOCTYPE html>
+<html>
+<script >alert("head 시작전")</script>
+<head>
+<script >alert("head 시작")</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>alert("head 태그 종료전 : 권장..")</script>
+</head>
+<body>
+<script >alert("body 태그 시작 ")</script>
+
+<h1> 스크립트 위치...</h1>
+
+<script >alert("body 태그 종료전 : 권장 ")</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+li {
+	text-decoration: underline;
+	color: blue;
+}
+
+li:HOVER {
+	color: purple;
+}
+</style>
+<script type="text/javascript">
+	function doAdd1() {
+
+		var textBox = document.getElementById("Box");
+		textBox.innerHTML += "문자열 : <input type='text' /><br>";
+
+	}
+	function doAdd2() {
+		var pwBox = document.getElementById("Box");
+		pwBox.innerHTML += "비밀번호 : <input type='password' /><br>";
+
+	}
+	function doAdd3() {
+		var checkBox = document.getElementById("Box");
+		checkBox.innerHTML += "체크박스 : <input type='checkbox' /><br>";
+
+	}
+	function doAdd4() {
+		var radioBt = document.getElementById("Box");
+		radioBt.innerHTML += "라디오버튼 : <input type='radio' /><br>";
+
+	}
+	function doAdd5() {
+		var bt = document.getElementById("Box");
+		bt.innerHTML += "버튼 : <button >버튼</button><br>";
+
+	}
+	function doAdd6() {
+		var comboBox = document.getElementById("Box");
+		comboBox.innerHTML += "콤보박스 : <select><option>콤보항목1</option><option>콤보항목2</option></select><br>";
+
+	}
+</script>
+</head>
+<body>
+	<h3>DOM Node 생성</h3>
+	<hr>
+	<div id="Box"></div>
+<!-- 	<div id="pwBox"></div> -->
+<!-- 	<div id="checkBox"></div> -->
+<!-- 	<div id="radioBt"></div> -->
+<!-- 	<div id="bt"></div> -->
+<!-- 	<div id="comboBox"></div> -->
+
+
+
+	<ul>
+		<li><a onclick="doAdd1();">문자열 박스 생성</a></li>
+		<li><a onclick="doAdd2();">비밀번호 박스 생성</a></li>
+		<li><a onclick="doAdd3();">체크 박스 생성</a></li>
+		<li><a onclick="doAdd4();">라디오 버튼 생성</a></li>
+		<li><a onclick="doAdd5();">버튼 생성</a></li>
+		<li><a onclick="doAdd6();">콤보 박스 생성</a></li>
+	</ul>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function func(val){
+		var cnt = val;
+		return function () {
+			return cnt++
+		}
+		
+	}
+	
+	var f = func(100);
+
+	console.log(f());  // 100
+	console.log(f());  // 101
+
+	var f2 = func(100);   // 인스턴스 생성과 같이 별개로 참조된다.
+
+	console.log(f2());  //  100 
+	console.log(f2());  //  101
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

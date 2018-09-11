@@ -1,0 +1,55 @@
+<!-- 
+	자바스크립트 배열의 이해
+	-----------------------------------------
+	- 크기가 지정되어 있지 않아도 입력이 가능함.
+	- 크기가 동적으로 늘어남 
+	- 어떤 타입도 입력이 가능함
+	
+	
+	배열 만들기
+	--------------------------
+	[], Array
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	// 크기를 설정하지 않은 비어있는 배열
+	var arr = [];
+	console.log("arr.length : " + arr.length);
+
+	console.log("arr[0] : " + arr[0]); //undefined
+	console.log("arr[1] : " + arr[1]); //undefined
+	console.log("arr[2] : " + arr[2]); //undefined
+
+	arr[0] = 10;
+	console.log("arr.length : " + arr.length);
+	console.log("arr[0] : " + arr[0]); //10
+
+	arr[2] = 20;
+	console.log("arr.length : " + arr.length);
+	console.log("arr[1] : " + arr[1]); //undefined
+	console.log("arr[2] : " + arr[2]); //20
+
+	//배열의 생성시 초기값을 설정
+	var arr2 = [ 1, 10, 20 ];
+	console.log("arr.length : " + arr2.length);
+	console.log("arr2[0] : " + arr2[0]); //10
+	console.log("arr2[1] : " + arr2[1]); //undefined
+	console.log("arr2[2] : " + arr2[2]); //20
+
+	// 배열은 모든 요소를 담을 수 있다.
+	var arr3 = [ 1, "a", true, {}, function() {}, [ 1, 2 ] ];
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

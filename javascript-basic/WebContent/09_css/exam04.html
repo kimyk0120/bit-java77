@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function upSize() {
+		var dObj = document.querySelector("div");
+		
+		var size = document.defaultView.getComputedStyle(dObj, null)
+				.getPropertyValue("font-size");
+		
+		dObj.style.fontSize = parseInt(size) + 2 + "px";
+	}
+
+	function downSize() {
+		var dObj = document.querySelector("div");
+		
+		var size = document.defaultView.getComputedStyle(dObj, null)
+		.getPropertyValue("font-size");
+		
+		
+		dObj.style.fontSize = parseInt(size) - 2 + "px";
+
+	}
+</script>
+</head>
+<body>
+	<p>
+		<button onclick="upSize()">크게</button>
+		<button onclick="downSize()">작게</button>
+
+	</p>
+
+
+	<div>
+		<p>
+			조선왕조실톡 무적핑크 <br> 어느 날 메신저로 찾아온, <br>조선 시대 그분들의 시시콜콜한 이야기. <br>무적핑크
+			작가 신작!
+		</p>
+	</div>
+</body>
+</html>
