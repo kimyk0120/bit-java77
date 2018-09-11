@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+    
+    <insert id="userJoin" parameterType="com.spring.user.vo.UserVo">
+    	INSERT INTO USER_INFO 
+    	(
+    	USER_SEQ
+		,USER_ID
+		,USER_PW
+		,USER_NAME
+		,USER_PHONE1
+		,USER_PHONE2
+		,USER_PHONE3
+		,USER_ADDR1
+		,USER_ADDR2
+		,USER_COMPANY
+		,CREATOR
+		,CREATE_TIME
+		,MODIFIER
+		,MODIFIED_TIME
+    	) VALUES (
+    	#(userSeq)
+    	,#(userId)
+    	,#(userPw)
+    	,#(userName)
+    	,#(userPhone1)
+    	,#(userPhone2)
+    	,#(userPhone3)
+    	,#(userAddr1)
+    	,#(userAddr2)
+    	,#(userCompany)
+    	,'SYSTEM'
+    	,TO_CHAR(SYSDATE)
+    	,'SYSTEM'
+    	,TO_CHAR(SYSDATE)
+    	);
+    </insert>
+    
+    <select id="loginUser" parameterType="com.spring.user.vo.UserVo" resultType="com.spring.user.vo.UserVo">
+    	select asdasdasdasd
+    </select>
+    
+    
+</mapper>

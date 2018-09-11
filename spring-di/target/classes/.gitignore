@@ -1,0 +1,10 @@
+/META-INF/
+/autoWired/
+/collection/
+/componentScan/
+/config/
+/configDivide/
+/constructorInjection/
+/container/
+/setterInjection/
+/test/

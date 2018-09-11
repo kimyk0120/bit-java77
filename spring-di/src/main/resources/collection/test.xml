@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ham" class="collection.HamSand" p:title="햄" />
+	<bean id="cheese" class="collection.CheeseSand" p:title="치즈" />
+	<bean id="hamCheese" class="collection.HamCheeseSand" p:title="햄치즈" />
+
+	<bean id="menu" class="collection.Menu">
+		<property name="sandList">
+			<list>
+				<ref bean="ham" />
+				<ref bean="cheese" />
+				<ref bean="hamCheese" />
+			</list>
+		</property>
+		<property name="sandSet">
+			<set>
+				<ref bean="ham" />
+				<ref bean="cheese" />
+				<ref bean="hamCheese" />
+			</set>
+		</property>
+		<property name="sandMap">
+			<map>
+				<entry key="ham" value-ref="ham" />
+				<entry key="cheese" value-ref="cheese" />
+				<entry key="hamCheese" value-ref="hamCheese" />
+			</map>
+		</property>
+		<property name="props">
+			<props>
+				<prop key="ham">햄</prop>
+				<prop key="cheese">치즈</prop>
+				<prop key="hamCheese">햄치즈</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+
+</beans>	

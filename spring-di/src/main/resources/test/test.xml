@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+
+<!-- test -->
+
+	<bean id="person" class="test.Person" />
+
+	<bean id="di1" class="test.DiTest" />
+	<bean id="di2" class="test.DiTest" >
+		<constructor-arg value="손병찬" />
+	</bean>
+	<bean id="di3" class="test.DiTest" p:person-ref="person">
+		<constructor-arg value="Di Test" />
+	</bean>
+	<bean id="di4" class="test.DiTest" p:name="홍길동" p:addr="서울" />
+
+
+
+
+</beans>	
